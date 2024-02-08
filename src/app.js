@@ -15,13 +15,28 @@ const when = [
   "during my lunch",
   "while I was praying"
 ];
+function randomIndex(len) {
+  return Math.floor(Math.random() * len);
+}
 
 window.onload = function() {
   //write your code here
   console.log("Hello MDC-25");
 
   //TODO: Create a random excuse
-  const excuse = who[0] + " " + action[1] + " " + what[2] + " " + when[3];
+  const indexWho = randomIndex(who.length);
+  const indexAction = randomIndex(action.length);
+  const indexWhat = randomIndex(what.length);
+  const indexWhen = randomIndex(when.length);
+  // ..
+  const excuse =
+    who[indexWho] +
+    " " +
+    action[indexAction] +
+    " " +
+    what[indexWhat] +
+    " " +
+    when[indexWhen];
 
   //Change the HTML page to show the random excuse
   document.querySelector("div").innerText = excuse;
